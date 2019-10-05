@@ -1,6 +1,6 @@
 
 ###### Information ######
-# Name:          readme_sample_data.txt
+# Name:          readme_samples_data.txt
 # Course:        CS 6220
 # Semester:      Fall 2019
 # Instructor:    Ling Liu

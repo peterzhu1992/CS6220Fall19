@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ###### Information ######
-# Name:          sample_data_script.sh
+# Name:          samples_data_script.sh
 # Course:        CS 6220
 # Semester:      Fall 2019
 # Instructor:    Ling Liu
