@@ -3,11 +3,14 @@
 ###### Attributes ######
 
 IS_KORE_5=true
+CLEAN_UP=true
 CATEGORY_NAME="$1"
-PRODUCT_ASIN=""
+PRODUCT_COUNTER=0
+TEMP_COUNTER=0
+HEAD_LINES=1000
 CURR_DIR=`pwd`
 COMBINED_DATA_CAT_DIR="$CURR_DIR/combined_data/$CATEGORY_NAME"
-
+PRODUCT_ASIN_TEMP=""
 
 ########################
 
@@ -28,9 +31,9 @@ fi
 
 if [[ $IS_KORE_5 == true ]]
 then
-	INPUT_FEEDBACKS_FILE="$CURR_DIR/feedbacks_data/feedbacks_$CATEGORY_NAME_5.json"
+	INPUT_FEEDBACKS_FILE="$CURR_DIR/feedbacks_data/feedbacks_${CATEGORY_NAME}_5.json"
 else
-	INPUT_FEEDBACKS_FILE="$CURR_DIR/feedbacks_data/feedbacks_$CATEGORY_NAME.json"
+	INPUT_FEEDBACKS_FILE="$CURR_DIR/feedbacks_data/feedbacks_${CATEGORY_NAME}.json"
 fi
 
 
@@ -40,8 +43,47 @@ echo "Initial settings: CATEGORY_NAME=$CATEGORY_NAME, IS_KORE_5=$IS_KORE_5"
 
 
 ###### Main Steps ###### 
+echo "Using jq for json parsing purposes, please remember to install it on your server"
 
 mkdir -p $COMBINED_DATA_CAT_DIR
-#grep -e "'asin': 'B00000JBLH'" meta_data/Office_Products/meta_Office_Products.json
+if [[ $CLEAN_UP == true ]]
+then
+	rm -rf $COMBINED_DATA_CAT_DIR/*
+fi
+
+# temporary
+HEAD_LINES=`wc -l $INPUT_FEEDBACKS_FILE`
+#echo "HEAD_LINES $HEAD_LINES"
+#echo "starts in 10 seconds..."
+#sleep 10
+
+head -n $HEAD_LINES $INPUT_FEEDBACKS_FILE | while read line
+do
+	
+	PRODUCT_ASIN=`echo "$line" | jq -r .asin`
+	
+	if [[ $PRODUCT_ASIN != $PRODUCT_ASIN_TEMP ]]
+	then
+		PRODUCT_COUNTER=$((PRODUCT_COUNTER+1))
+		PRODUCT_ASIN_TEMP=$PRODUCT_ASIN
+		if [[ $PRODUCT_COUNTER = 101 ]]
+		then
+			PRODUCT_COUNTER=$((PRODUCT_COUNTER-1))
+			echo "$PRODUCT_COUNTER products have been separated into standalone files in $COMBINED_DATA_CAT_DIR"
+			break
+		else
+			echo "product $PRODUCT_COUNTER"
+		fi
+	fi
+
+
+	TEMP_COUNTER=$((TEMP_COUNTER+1))
+	echo "parsing feedback $TEMP_COUNTER"
+	#echo $line | sed 's/\\"//g'
+	#echo $COMBINED_DATA_CAT_DIR/feedbacks_$PRODUCT_ASIN.json
+	echo $line >> $COMBINED_DATA_CAT_DIR/feedbacks_$PRODUCT_ASIN.json
+	#echo ""
+done
+
 
 ########################
