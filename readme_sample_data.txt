@@ -1,3 +1,15 @@
+
+###### Information ######
+# Name:          readme_sample_data.txt
+# Course:        CS 6220
+# Semester:      Fall 2019
+# Instructor:    Ling Liu
+# About:         A simple readme file about our initial data processing...
+# Writor:        Jiaxiang Zhu
+# Start Date:    2019-10-03
+# Modified Date: 2019-10-04
+#########################
+
 meta_data:      has all the metadata for the products.
 feedbacks_data: has all the reviews/ratings for the products.
 combined_data:  are sorted json combined meta and feedbacks data into one.
@@ -11,4 +23,5 @@ In case of products having too little reviews, the raw feedback data are using t
 As of now, I do not have time to sort based on year. so the data can be ranged from 1996 to 2014.
 
 More to come...
+
 

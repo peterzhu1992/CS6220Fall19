@@ -1,5 +1,16 @@
 #!/bin/bash
 
+###### Information ######
+# Name:          sample_data_script.sh
+# Course:        CS 6220
+# Semester:      Fall 2019
+# Instructor:    Ling Liu
+# About:         Script to process product feedbacks and metadata
+# Writor:        Jiaxiang Zhu
+# Start Date:    2019-10-04
+# Modified Date: 2019-10-04
+#########################
+
 ###### Attributes ######
 
 IS_KORE_5=true
