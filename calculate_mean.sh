@@ -14,3 +14,6 @@ PER_5=`echo $5/$TOTAL*5 | bc -l`
 echo $TOTAL
 echo $PER_1 $PER_2 $PER_3 $PER_4 $PER_5
 echo $PER_1 + $PER_2 + $PER_3 + $PER_4 + $PER_5 | bc
+
+#Written by JiaxiangZhu
+
