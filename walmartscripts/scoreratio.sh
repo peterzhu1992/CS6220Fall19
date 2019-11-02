@@ -15,7 +15,7 @@ do
 
 done
 
-
+rm test1.txt
 
 << --
 #mysqlconfigs.txt
