@@ -1,4 +1,0 @@
-[client]
-user = root
-password = DBpassword*6220
-host = localhost
