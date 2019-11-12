@@ -1,4 +1,20 @@
 #!/bin/bash
+
+###### Information ######
+# Name:          calculate_mean.sh
+# Course:        CS 6220
+# Semester:      Fall 2019
+# Instructor:    Ling Liu
+#
+# About:         Script to calculate the means among the ratings
+#                Using each amount of ratings divided by total amount and multiply the ratings
+#                Add the results together to get the mean
+#
+# Writor:        Jiaxiang Zhu
+# Start Date:    2019-10-17
+# Modified Date: 2019-11-12
+#########################
+
 echo "This mean script utilize the bc utility"
 echo "Written fast with hard coding only"
 echo "Example Usage: \"$0 743 694 1364 3030 9889\""
@@ -15,5 +31,4 @@ echo $TOTAL
 echo $PER_1 $PER_2 $PER_3 $PER_4 $PER_5
 echo $PER_1 + $PER_2 + $PER_3 + $PER_4 + $PER_5 | bc
 
-#Written by JiaxiangZhu
 

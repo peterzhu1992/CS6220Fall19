@@ -5,10 +5,14 @@
 # Course:        CS 6220
 # Semester:      Fall 2019
 # Instructor:    Ling Liu
+#
 # About:         Script to process product feedbacks and metadata
+#                Specifically to sort out the initial raw Amazon data from UCSD
+#                http://jmcauley.ucsd.edu/data/amazon/
+#
 # Writor:        Jiaxiang Zhu
 # Start Date:    2019-10-04
-# Modified Date: 2019-10-04
+# Modified Date: 2019-11-12
 #########################
 
 ###### Attributes ######

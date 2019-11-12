@@ -2,6 +2,8 @@ import csv
 import sys
 import os
 
+# Written by RyanAnderson
+# This is a script to sort the combined data and insert them into the mysql database
 
 if len(sys.argv) > 1:
     baseFolder = sys.argv[1]
