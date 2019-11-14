@@ -29,9 +29,11 @@ do
 	do
 
 		#echo "ij: $i $j"
+		#VALUES=`mysql --defaults-extra-file=mysqlconfigs.txt -N -e "SELECT COUNT(*) FROM db.Data WHERE (source = '$SOURCE' AND score = $i AND sentScore = $j);"`
+		VALUES=`mysql --defaults-extra-file=mysqlconfigs.txt -N -e "SELECT COUNT(*) FROM db.Data WHERE (source = '$SOURCE' AND department = '$1' AND score = $i AND sentScore = $j);"`
 
 		#VALUES=`mysql --defaults-extra-file=mysqlconfigs.txt -N -e "SELECT COUNT(*) FROM db.Data WHERE (source = '$SOURCE' AND score = $j AND sentScore = $i);"`
-		VALUES=`mysql --defaults-extra-file=mysqlconfigs.txt -N -e "SELECT COUNT(*) FROM db.Data WHERE (source = '$SOURCE' AND department = '$1' AND score = $j AND sentScore = $i);"`
+		#VALUES=`mysql --defaults-extra-file=mysqlconfigs.txt -N -e "SELECT COUNT(*) FROM db.Data WHERE (source = '$SOURCE' AND department = '$1' AND score = $j AND sentScore = $i);"`
 		echo -ne "$VALUES \t"
 	done
 
