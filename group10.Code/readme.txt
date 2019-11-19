@@ -81,5 +81,8 @@ There are several folders in this package.
   These excel sheets are the graphs we generated from the data output we have above.
 
 
+As for other information on data analysis and results, please check our final paper for more information.
+Thank you very much.
+Group 10 (Jiaxiang Zhu, Ryan Anderson, Siyao Cai, Sean Lu)
 
 
