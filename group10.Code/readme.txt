@@ -3,7 +3,7 @@
 # Course:        CS 6220
 # Semester:      Fall 2019
 # Instructor:    Ling Liu
-# Writor:        Jiaxiang Zhu
+# Author:        Jiaxiang Zhu
 #                Ryan Anderson
 #                Siyao Cai
 #                Sean Lu
@@ -68,6 +68,9 @@ There are several folders in this package.
 
 - query_scripts/rating_sentScore_matrix.sh
   This script is generate the matrix of ratings vs. sentimentScore.
+ 
+- WalmartReviewScraper.py
+  Gathers product reviews from a given set of URLs. Requires Selenium WebDriver and a Chrome driver to run.
 
 ###############################################################################################
 
